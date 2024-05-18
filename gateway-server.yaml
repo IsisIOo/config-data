@@ -21,11 +21,15 @@ spring:
             allowedMethods: "*"
             allowedHeaders: "*"
       routes:
-        - id: ms-orders //cuidado aqui que se coloca las cosas de los repositorios
-          uri: lb://ms-orders:8090
+        - id: autofix-car
+          uri: lb://autofix-car:8001
           predicates:
-            - Path=/orders/**
-        - id: ms-products
-          uri: lb://ms-products:8091
+            - Path=/car/**
+        - id: autofix-repair
+          uri: lb://autofix-repair:8002
           predicates:
-            - Path=/products/**
+            - Path=/repair/**
+        - id: autofix-repair-cost
+          uri: lb://autofix-repair-cost:8003
+          predicates:
+            - Path=//**
