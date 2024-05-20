@@ -22,14 +22,16 @@ spring:
             allowedHeaders: "*"
       routes:
         - id: autofix-car
-          uri: lb://autofix-car:8001
+          uri: lb://autofix-car:8090
           predicates:
             - Path=/car/**
+
         - id: autofix-repair
-          uri: lb://autofix-repair:8002
+          uri: lb://autofix-repair:8091
           predicates:
             - Path=/repair/**
+
         - id: autofix-repair-cost
-          uri: lb://autofix-repair-cost:8003
+          uri: lb://autofix-repair-cost:8093
           predicates:
             - Path=//**
