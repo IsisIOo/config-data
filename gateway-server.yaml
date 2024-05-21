@@ -31,7 +31,7 @@ spring:
           predicates:
             - Path=/repair/**
 
-        - id: autofix-repair-cost
-          uri: lb://autofix-repair-cost:8093
+        - id: autofix-list-repair
+          uri: lb://autofix-list-repair:8092
           predicates:
-            - Path=//**
+            - Path=/repair-list/**
