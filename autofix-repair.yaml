@@ -2,7 +2,7 @@ server:
   port: 8091
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/
+    url: jdbc:postgresql://localhost:5432/db-repair
     username: postgres
     password: isilinda
 eureka:
