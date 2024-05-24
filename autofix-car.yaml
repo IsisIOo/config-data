@@ -1,5 +1,5 @@
 server:
-  port: 8090
+  port:  ${PORT:${SERVER_PORT:0}}
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/db-car
