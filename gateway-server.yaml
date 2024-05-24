@@ -1,5 +1,6 @@
 server:
   port: 8080
+
 eureka:
   instance:
     hostname: localhost
@@ -14,24 +15,19 @@ spring:
       discovery:
         locator:
           enabled: true
-      globalcors:
-        cors-configurations:
-          '[/**]':
-            allowedOrigins: '*'
-            allowedMethods: "*"
-            allowedHeaders: "*"
+
       routes:
         - id: autofix-car
-          uri: lb://autofix-car:8090
+          uri: lb://autofix-car
           predicates:
             - Path=/car/**
 
         - id: autofix-repair
-          uri: lb://autofix-repair:8091
+          uri: lb://autofix-repair
           predicates:
             - Path=/repair/**
 
         - id: autofix-list-repair
-          uri: lb://autofix-list-repair:8092
+          uri: lb://autofix-list-repair
           predicates:
             - Path=/repair-list/**
