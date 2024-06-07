@@ -8,7 +8,7 @@ eureka:
     fetch-registry: true
     register-with-eureka: true
     service-url:
-      default-zone: http://localhost:8761/eureka/
+      defaultZone: http://localhost:8761/eureka/
 spring:
   cloud:
     gateway:
@@ -27,11 +27,10 @@ spring:
           predicates:
             - Path=/api/car/**
 
-        - id: autofix-repair
-          uri: lb://autofix-repair
+        - id: autofix-repairs
+          uri: lb://autofix-repairs
           predicates:
-            - Path=/api/repair/**
-            - Path=/api/detail/**
+            - Path=/api/repairs/**
 
         - id: autofix-list-repair
           uri: lb://autofix-list-repair
