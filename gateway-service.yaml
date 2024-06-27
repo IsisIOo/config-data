@@ -38,3 +38,8 @@ spring:
           uri: lb://autofix-list-repair
           predicates:
             - Path=/api/repair-list/**
+            -
+        - id: reportes
+          uri: lb://reportes
+          predicates:
+            - Path=/api/reportes/**
