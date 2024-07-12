@@ -43,7 +43,7 @@ spring:
           uri: lb://reportes
           predicates:
             - Path=/api/reportes/**
-            -
+
         - id: descuento
           uri: lb://descuento
           predicates:
